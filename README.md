@@ -1,2 +1,2 @@
-# EDAM
-Experimental Data Analysis Module
+# Data Analysis Tools
+Digital amenities for experimental data analysis.
