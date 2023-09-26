@@ -260,3 +260,36 @@ N.B.: the pop method also supports a "keypath" argument;
         if extension=='json':
             with open(path,'w') as f:
                 json.dump(self.to_json_serializable(),f)
+        
+    
+d = {'a': 3.141592653589793,
+  'b': True,
+  'c': {'c1': np.array([[2.3, 2.3],
+          [2.3, 2.3]]), 'c2': {'c21': None, 'c22': np.inf,'cjhekjhlfkqjezhl':'C:/Users/Simon/Documents/0_BEC/1_DataDict_TREATMENT/dada/handle/DataDict2.py','ttttker fjior':np.diag([1,2,3,4,5])}},
+  'd': 'Bonjour',
+  'e': Fraction(1, 7),
+  'fgjhre fhjiheri djh':np.diag(np.ones(123)),
+  'oir':[1,2,3,4]*46,
+  'z':[[1,2],[3,4]],
+  8:1}
+D = DataDict(d)
+# # print(D)
+# D.print_types()
+D.merge({'c':{'c2':{'c23':0}},9:3})
+# print(D)
+e = D.c.copy()
+g = D.select(['a','b','c.c1'])
+e.update(g)
+
+# S1 = pd.Series({'a1':0,'a2':1})
+# S = pd.Series({'a':S1,'b':np.array([[1,2],[3,4]])})
+# s = DataDict(S)
+
+# f = h5py.File('2023-06-19_0003_seqBEC_0.h5')
+# F = DataDict(f)
+# o = F.globals.Dimple
+# o.update(S)
+
+u = {'col1': [0, 1, 2, 3], 'col2': pd.Series([2, 3], index=[2, 3])}
+v = pd.DataFrame(data=u, index=[0, 1, 2, 3])
+w = DataDict(v)
